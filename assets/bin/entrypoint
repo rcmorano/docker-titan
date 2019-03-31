@@ -1,0 +1,12 @@
+#!/bin/sh
+
+ARGS=$@
+
+if [ ! -e "${TITAN_DB}" ]
+then
+  titan --init "${TITAN_DB}"
+else
+  titan --use-db "${TITAN_DB}"
+fi
+
+titan $ARGS
